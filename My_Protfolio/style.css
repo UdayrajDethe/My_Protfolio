@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato',sans-serif;
+
+}
+
+body {
+    background: #0A5F98;
+
+
+}   
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 35px;
+    position: relative;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#logo{
+
+    position: relative;
+    top: 3px;
+    left: 33px;
+    color: #ffe100;
+}
+
+.logo::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0A5F98;
+    animation: go_right 1s ease forwards;
+    animation-delay: .2s;
+    z-index: 1;
+}
+
+
+
+.logo ion-icon {
+    font-size: 45px;
+}
+
+.nav a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #ededed;
+    font-weight: 500;
+    font-weight: bold;
+    margin-left: 35px;
+    transition: 0.5s;
+}
+
+
+/* .nav a:hover{
+    color: #07070a;
+}
+
+
+.nav a.active{
+    color: #07070a;
+}  
+For this Two combine it write*/
+
+
+.nav a:hover,
+.nav a:active   {
+    color: #07070a;
+}
+
+.home{
+    height: 100vh;
+    background: url('acesst/img.jpg') no-repeat;
+    background-size: 650px;
+    background-position: right  ;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.home_contant{
+    max-width: 600px;
+}
+
+.home_contant h2{
+    position: relative;
+    font-size: 46px;
+    font-weight: 700;
+    color: #323243;
+}
+
+.home_contant h2 span{
+    
+    color: #323243;
+}
+
+.wapper{
+    display: inline-flex;
+}
+
+.fix-txt{
+    color: rgb(231, 42, 42);
+    position: relative;
+    top: 5px;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.wapper .moving-txt{
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.moving-txt li{
+    list-style: none;
+    color: #323243;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: move 6s steps(4) infinite;
+}
+
+@keyframes move {
+100%{
+    top: -360px
+}    
+}
+
+.moving-txt li span::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #0A5F98;
+    border-left: 2px solid #323243;
+    animation: type 1.5s steps(8) infinite;
+    animation-delay: 1.5s      ;
+}
+
+@keyframes type {
+
+100%{
+    left: 100%;
+    margin: 0 -35px 0 35px;
+}
+}
+
+.home_contant .wapper::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0A5F98;
+    animation: go_right 2.5s ease forwards;
+    animation-delay: 1s;
+    z-index: 1;
+}
+
+.home_contant p{
+    position: relative;
+    font-size: 28px;
+    font-weight: 500;
+    color: whitesmoke;
+    margin: 20px 0 40px;
+}
+
+.home_contant p::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0A5F98;
+    animation: go_right 1.5s ease forwards;
+    animation-delay: 1.3s;
+    z-index: 1;
+}
+
+
+.social {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    background: transparent;
+    justify-content: space-between;
+}
+
+.social a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.social a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.social a:hover{
+    color: white  ;
+}
+
+.social a:hover::before{
+    width: 100%;
+}
+
+#img_cover{
+    position: absolute;
+    height: 100%;
+    width: 500px;
+    top: 0;
+    right: 40px;
+    background: transparent;
+    transition: 3s;
+}
+
+#img_cover:hover{
+    background-color: #0A5F98;
+    opacity: .8 ;
+
+}
+
+@keyframes go_right {
+    100%{
+        width: 0;
+    }
+}
+
